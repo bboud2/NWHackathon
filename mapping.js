@@ -22,9 +22,9 @@ $(function () {
 
     function myMap() {
         var mapOptions = {
-            center: new google.maps.LatLng(49.2057, -122.939603),
-            zoom: 10,
-            mapTypeId: google.maps.MapTypeId.HYBRID
+            center: new google.maps.LatLng(49.206744, -122.910930),
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
     }
