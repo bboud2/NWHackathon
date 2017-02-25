@@ -1,6 +1,6 @@
 .navbar {
     background-color: #404040;
-    color: #afcecf;
+
     border-color:#404040;
     border-radius: 0%;
     width: 100%;
@@ -13,6 +13,14 @@
     transition: background 1s ease 0s;
 }
 
+.navbar-default .navbar-nav li a {
+    color: white;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #afcecf;
+}
+
 li a :hover {
     color: white;
 }
@@ -21,12 +29,17 @@ body {
     font-family: 'Titillium Web', sans-serif;
     background-color: #afcecf;
     color: #404040;
+
+}
+
+#rest {
+    padding-left:30px;
 }
 
 #title {
     text-align: center;
-    font-size:120px;
-    padding-top: 50px;
+    /*font-size:120px;*/
+    padding-top: 120px;
 }
 
 .container-fluid {
@@ -36,5 +49,7 @@ body {
 .section {
     font-weight: bold;
     font-size: 30px;
+    padding-top: 50px;
+    padding-bottom: 10px;
 
 }
