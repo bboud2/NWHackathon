@@ -7,12 +7,18 @@
 
     <title>NW Traffic Web App</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <!-- CSS resources -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <!-- Latest compiled JavaScript Bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <script src="index.js"></script>
+    <script src="mapping.js"></script>
 
 </head>
 
@@ -53,12 +59,15 @@
         </p>
     </div>
 
-    <div id="map" class="container-fluid notDesign">
+    <div id="map-container" class="container-fluid notDesign">
         <div class="section">MAP</div>
-        <p>
-            Place map here
-        </p>
-    </div>
+
+        Place map here
+
+        <div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2KXFF0hWGRcfFAUX0ikEqfusu9l_wjZ8&callback=myMap"></script>
+
 
     <div id="contact" class="container-fluid notDesign">
         <div class="section">CONTACT</div>
@@ -67,7 +76,7 @@
         </p>
     </div>
 
-    </div>
+
 
 </body>
 
