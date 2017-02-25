@@ -18,6 +18,7 @@
 
 
     <script src="index.js"></script>
+    <script src="mapping.js"></script>
 
 </head>
 
@@ -64,17 +65,6 @@
         Place map here
 
         <div id="map" style="width:400px;height:400px;background:yellow"></div>
-
-        <script>
-            function myMap() {
-                var mapOptions = {
-                    center: new google.maps.LatLng(49.2057, -122.9110),
-                    zoom: 10,
-                    mapTypeId: google.maps.MapTypeId.HYBRID
-                }
-                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-            }
-        </script>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2KXFF0hWGRcfFAUX0ikEqfusu9l_wjZ8&callback=myMap"></script>
 
