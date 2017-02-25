@@ -76,12 +76,13 @@
     <div id="map-container" class="container-fluid notDesign">
         <div class="section">MAP</div>
 
-        <form action="/action_page.php">
-            <input type="checkbox" name="vehicle" value="Bike">Bus stops<br>
-            <input type="checkbox" name="vehicle" value="Car" checked>Skytrain stations<br>
-            <input type="submit" value="Submit">
-        </form>
+       <div id="checkboxes">
+            <input type="checkbox" value="bus" id="bus">Bus stops<br>
+            <input type="checkbox" value="skytrain" id="skytrain">Skytrain stations<br>
+            <input type="checkbox" value="traffic" id="traffic">Traffic<br>
+            <input type="submit" value="submit" id="submit">
 
+       </div>
 
         <div id="map" style="width:400px;height:400px;background:yellow"></div>
 
