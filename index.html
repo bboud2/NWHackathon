@@ -7,6 +7,8 @@
 
     <title>NW Traffic Web App</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <!-- CSS resources -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -59,14 +61,10 @@
     <div id="map" class="container-fluid notDesign">
         <div class="section">MAP</div>
 
-            Place map here
+        Place map here
+        <br>
 
-        <iframe
-                width="600"
-                height="450"
-                frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC2KXFF0hWGRcfFAUX0ikEqfusu9l_wjZ8
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
+        <iframe width="600" height="450" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2KXFF0hWGRcfFAUX0ikEqfusu9l_wjZ8&callback=initMap" allowfullscreen>
         </iframe>
 
 
