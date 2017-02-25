@@ -3,6 +3,14 @@
     color: #afcecf;
     border-color:#404040;
     border-radius: 0%;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8em;
+    letter-spacing: 0.2em;
+    position: fixed;
+    z-index: 400;
+    transition: background 1s ease 0s;
 }
 
 li a :hover {
@@ -18,11 +26,11 @@ body {
 #title {
     text-align: center;
     font-size:120px;
+    padding-top: 50px;
 }
 
 .container-fluid {
     font-size: 20px;
-
 }
 
 .section {
