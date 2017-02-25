@@ -15,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
-    <script src="/index.js"></script>
+    <!--<script src="index.js"></script>-->
 
 </head>
 
@@ -61,16 +61,20 @@
 
             Place map here
 
-        <iframe
-                width="600"
-                height="450"
-                frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC2KXFF0hWGRcfFAUX0ikEqfusu9l_wjZ8
-    &q=Space+Needle,Seattle+WA" allowfullscreen>
-        </iframe>
+        <div id="maps"></div>
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 8
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2KXFF0hWGRcfFAUX0ikEqfusu9l_wjZ8&callback=initMap"
+                async defer></script>
 
 
-    </div>
 
     <div id="contact" class="container-fluid notDesign">
         <div class="section">CONTACT</div>
@@ -79,7 +83,7 @@
         </p>
     </div>
 
-    </div>
+
 
 </body>
 
