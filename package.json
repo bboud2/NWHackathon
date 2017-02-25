@@ -1,0 +1,19 @@
+{
+  "name": "nwhackathon",
+  "version": "1.0.0",
+  "description": "Project for New Westminster Open Data Hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bboud2/NWHackathon.git"
+  },
+  "author": "Soo Kim, Ben Boudreau, Giulia Mattia, R.W. Blickhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bboud2/NWHackathon/issues"
+  },
+  "homepage": "https://github.com/bboud2/NWHackathon#readme"
+}
