@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
 
-    <title>NW Traffic Web App</title>
+    <title>Traffic</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -13,12 +13,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
     <!-- Latest compiled JavaScript Bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
+
     <script src="index.js"></script>
     <script src="mapping.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
 
 </head>
 
@@ -52,22 +60,25 @@
         </div>
     </nav>
 
+
+    <div id="title">
+        <p>traffic</p>
+    </div>
+
     <div id="about" class="container-fluid notDesign">
         <div class="section">ABOUT</div>
         <p>
-            North West Hackathon project by Soo, Giulia, Ben, Russell
+            City of New Westminster or City of Traffic?
+
         </p>
     </div>
 
     <div id="map-container" class="container-fluid notDesign">
         <div class="section">MAP</div>
 
-        Place map here
-
-
         <form action="/action_page.php">
-            <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
-            <input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
+            <input type="checkbox" name="vehicle" value="Bike">Bus stops<br>
+            <input type="checkbox" name="vehicle" value="Car" checked>Skytrain stations<br>
             <input type="submit" value="Submit">
         </form>
 
