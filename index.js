@@ -20,7 +20,7 @@ function listener(req, resp) {
             resp.writeHead(404, {'Content-Type': 'text/plain'});
             resp.write("404 Not Found\n");
             resp.end();
-            return; 
+            return;
         }
         fs.readFile(fd, 'utf8', (err, data) => {
             if (err) {
@@ -28,7 +28,7 @@ function listener(req, resp) {
                 resp.writeHead(500, {'Content-Type': 'text/plain'});
                 resp.write(err + '\n');
                 resp.end();
-                return;    
+                return;
             }
             resp.writeHead(200, {'Content-Type': 'text/' + contentType});
             resp.write(data, 'utf8');
