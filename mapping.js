@@ -53,6 +53,7 @@ $(function () {
                     });
                     marker.setMap(map);
 
+
                     // google.maps.event.addListener(marker, "click", (function(marker) {
                     //     return function(evt) {
                     //         var content = marker.getTitle();
