@@ -53,7 +53,17 @@ $(function () {
                     });
                     marker.setMap(map);
 
+
+                    // google.maps.event.addListener(marker, "click", (function(marker) {
+                    //     return function(evt) {
+                    //         var content = marker.getTitle();
+                    //         infowindow.setContent(contentString);
+                    //         infowindow.open(map, marker);
+                    //     }
+                    // })(marker));
                 }
+
+
             }).error(function () {
                 console.log('error');
             });
