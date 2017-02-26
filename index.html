@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" style="height:100%;">
 
 <head>
@@ -16,6 +16,7 @@
               </button>
     <!-- CSS resources -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <!--jquery-->
@@ -24,7 +25,6 @@
     <!-- Latest compiled JavaScript Bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <script src="index.js"></script>
     <script src="mapping.js"></script>
     <script src="design.js"></script>
 
@@ -71,7 +71,7 @@
     <div id="rest">
 
     <div id="about" class="container-fluid notDesign">
-        <div class="section">ABOUT</div>
+        <div class="section"><i class="fa fa-search" aria-hidden="true"></i> ABOUT</div>
         <p>
             City of New Westminster or City of Traffic?
 
@@ -79,7 +79,7 @@
     </div>
 
     <div id="map-container" class="container-fluid notDesign">
-        <div class="section">MAP</div>
+        <div class="section"><i class="fa fa-map-marker" aria-hidden="true"></i> MAP</div>
 
        <div id="checkboxes">
             <input type="checkbox" value="bus" id="bus">Bus stops<br>
@@ -92,13 +92,12 @@
         <br>
 
         <div id="map" style="width:1000px;height:700px;background:yellow"></div>
-
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2KXFF0hWGRcfFAUX0ikEqfusu9l_wjZ8&callback=myMap"></script>
 
     </div>
 
     <div id="contact" class="container-fluid notDesign">
-        <div class="section">CONTACT</div>
+        <div class="section"><i class="fa fa-address-card" aria-hidden="true"></i> CONTACT</div>
         <p>
             https://github.com/bboud2/NWHackathon
         </p>
@@ -106,9 +105,9 @@
 
     </div>
 
-
-
+    <footer>
+      This page was generated with <i class="fa fa-heart" aria-hidden="true" style="color:pink;"></i> by Soo, Russell, Giulia, and Ben in New Westminster, BC during NW Hack Our City
+    </footer>
 </body>
-
 
 </html>
