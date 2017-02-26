@@ -60,11 +60,7 @@ $(function () {
                     //         infowindow.open(map, marker);
                     //     }
                     // })(marker));
-
                 }
-
-
-
 
             }).error(function () {
                 console.log('error');
