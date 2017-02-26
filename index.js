@@ -2,8 +2,29 @@ var http = require('http');
 var url = require('url');
 var path = require('path');
 var fs = require('fs');
+var converter = require('csvtojson');
 
-http.createServer(listener).listen(8000);
+function convert(filename) {
+   var inFilename = filename + '.csv';
+   var inFile = path.join(process.cwd(), inFilename);
+   var inFileContents = fs.readFileSync(inFile, 'utf8');
+   var lines = inFileContents.split('\r\n');
+   var result = [];
+   var headers = lines[0].split(',');
+   for (var i = 1; i < lines.length; i++) {
+        var obj = {};
+        var currentLine = lines[i].split(',');
+        for (var j = 0; j < headers.length; j++) {
+            obj[headers[j]] = currentLine[j];
+        }
+        result.push(obj);
+   }
+
+   var outFilename = filename +'.json';
+   var outFile = path.join(process.cwd(), outFilename);
+   fs.writeFileSync(outFile, JSON.stringify(result));
+   console.log('Done converting ' + filename);
+}
 
 function listener(req, resp) {
     //determine local path to requested resource
@@ -36,3 +57,7 @@ function listener(req, resp) {
         });
     });
 }
+
+convert('BUS_STOPS');
+http.createServer(listener).listen(8000);
+
