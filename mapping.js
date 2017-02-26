@@ -39,12 +39,21 @@ $(function () {
             $.getJSON('mapdata/BUS_STOPS.json', function (data) {
                 console.log('parsed bus data successfully');
 
+                var infoWindows = [];
+
                 for (var i = 0; i < data.length; i ++) {
 
                     var lon = parseFloat(data[i].X);
                     var lat = parseFloat(data[i].Y);
+                    var busStop = data[i].BUSSTOPNUM;
 
                     var latlng = new google.maps.LatLng(lat, lon);
+
+                    var infowindow = new google.maps.InfoWindow({
+                        content: "BUS STOP: " + busStop
+                    });
+
+                    infoWindows.push(infowindow);
 
                     var marker = new google.maps.Marker({
                         position: latlng,
@@ -54,6 +63,12 @@ $(function () {
                     marker.setMap(map);
 
 
+                    marker.addListener('click', function(event) {
+                        infoWindows[i].setPosition(event.latLng);
+                        infoWindows[i].open(map);
+                    });
+
+                    //
                     // google.maps.event.addListener(marker, "click", (function(marker) {
                     //     return function(evt) {
                     //         var content = marker.getTitle();
