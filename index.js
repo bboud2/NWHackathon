@@ -7,24 +7,23 @@ var converter = require('csvtojson');
 function convert(filename) {
    var inFilename = filename + '.csv';
    var inFile = path.join(process.cwd(), inFilename);
-   console.log('in file: ' + inFile);
-   var outFilename = filename + '.json';
-   var outFile = path.join(process.cwd(), outFilename);
-   console.log('out file: ' + outFile);
-   var json = '';
-
-   converter().fromFile(inFile).on('json', (jsonObj) => {
-       console.log('got: ' + jsonObj);
-       json += JSON.stringify(jsonObj); 
-   }).on('end', (error) => {
-        if (error) {
-            console.log(error);
-            return;
+   var inFileContents = fs.readFileSync(inFile, 'utf8');
+   var lines = inFileContents.split('\n');
+   var result = [];
+   var headers = lines[0].split(',');
+   for (var i = 1; i < lines.length; i++) {
+        var obj = {};
+        var currentLine = lines[i].split(',');
+        for (var j = 0; j < headers.length; j++) {
+            obj[headers[j]] = currentLine[j];
         }
-        console.log('Finished converting ' + filename);
-   });
+        result.push(obj);
+   }
 
-   fs.writeFileSync(outFile, json);
+   var outFilename = filename +'.json';
+   var outFile = path.join(process.cwd(), outFilename);
+   fs.writeFileSync(outFile, JSON.stringify(result));
+   console.log('Done converting ' + filename);
 }
 
 function listener(req, resp) {
