@@ -73,6 +73,44 @@ $(function () {
     function plotSkytrain()  {
         console.log('plotting skytrain');
 
+        $(function () {
+            $.getJSON('mapdata/SKYTRAIN_STATIONS_PTS.json', function (data) {
+                console.log('parsed skytrain data successfully');
+
+                for (var i = 0; i < data.length; i ++) {
+
+                    var lon = parseFloat(data[i].X);
+
+                    var lat = parseFloat(data[i].Y);
+
+                    console.log(data);
+
+                    var latlng = new google.maps.LatLng(lat, lon);
+
+                    var marker = new google.maps.Marker({
+                        position: latlng,
+                        map: map,
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/blue.png',
+                        title: 'testing'
+                    });
+                    marker.setMap(map);
+
+                    // google.maps.event.addListener(marker, "click", (function(marker) {
+                    //     return function(evt) {
+                    //         var content = marker.getTitle();
+                    //         infowindow.setContent(contentString);
+                    //         infowindow.open(map, marker);
+                    //     }
+                    // })(marker));
+                }
+
+
+            }).error(function () {
+                console.log('error');
+            });
+        });
+
+
     }
 
     function plotTraffic() {
