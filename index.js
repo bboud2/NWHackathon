@@ -7,9 +7,10 @@ function listener(req, resp) {
     //determine local path to requested resource
     var localFile = path.join(process.cwd(), url.parse(req.url).pathname);
     var contentType = path.extname(localFile).substr(1); //substr to remove extra '.' from extname
-    if (localFile === path.dirname(localFile)) {
+    if (localFile === (process.cwd() + '/')) {
         //hacky way to redirect directory to {dir}/index.html
         localFile += 'index.html';
+        contentType = 'html';
     } 
 
     fs.open(localFile, 'r', (err, fd) => {
