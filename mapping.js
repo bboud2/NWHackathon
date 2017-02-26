@@ -36,7 +36,7 @@ $(function () {
         console.log('plotting bus');
 
         $(function () {
-            $.getJSON('BUS_STOPS.json', function (data) {
+            $.getJSON('mapdata/BUS_STOPS.json', function (data) {
                 console.log('parsed bus data successfully');
 
                 for (var i = 0; i < data.length; i ++) {
@@ -53,6 +53,7 @@ $(function () {
                     });
                     marker.setMap(map);
 
+
                     // google.maps.event.addListener(marker, "click", (function(marker) {
                     //     return function(evt) {
                     //         var content = marker.getTitle();
@@ -62,16 +63,11 @@ $(function () {
                     // })(marker));
                 }
 
+
             }).error(function () {
                 console.log('error');
             });
         });
-
-
-
-
-
-
     }
 
     function plotSkytrain()  {
@@ -87,4 +83,3 @@ $(function () {
 
 
 });
-
