@@ -8,7 +8,7 @@ function convert(filename) {
    var inFilename = filename + '.csv';
    var inFile = path.join(process.cwd(), inFilename);
    var inFileContents = fs.readFileSync(inFile, 'utf8');
-   var lines = inFileContents.split('\n');
+   var lines = inFileContents.split('\r\n');
    var result = [];
    var headers = lines[0].split(',');
    for (var i = 1; i < lines.length; i++) {
