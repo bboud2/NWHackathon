@@ -5,7 +5,7 @@ var fs = require('fs');
 
 function convert(filename) {
    var inFilename = filename + '.csv';
-   var inFile = path.join(process.cwd(), inFilename);
+   var inFile = path.join(process.cwd(), '/mapdata', inFilename);
    var inFileContents = fs.readFileSync(inFile, 'utf8');
    var lines = inFileContents.split('\r\n');
    var result = [];
@@ -20,7 +20,7 @@ function convert(filename) {
    }
 
    var outFilename = filename +'.json';
-   var outFile = path.join(process.cwd(), outFilename);
+   var outFile = path.join(process.cwd(), '/mapdata', outFilename);
    fs.writeFileSync(outFile, JSON.stringify(result));
    console.log('Done converting ' + filename);
 }
@@ -57,6 +57,12 @@ function listener(req, resp) {
     });
 }
 
+convert('BUS_ROUTES');
 convert('BUS_STOPS');
+convert('PARKS');
+convert('SKYTRAIN_STATIONS_PTS');
+convert('TRAFFIC_VOLUMES');
+convert('TREES_EAST');
+convert('TREES_WEST');
 http.createServer(listener).listen(8000);
 
